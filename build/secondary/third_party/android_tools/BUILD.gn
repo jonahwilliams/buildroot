@@ -32,6 +32,15 @@ android_java_prebuilt("android_support_annotations_javalib") {
   jar_path = "$android_sdk_root/extras/android/m2repository/com/android/support/support-annotations/25.3.0/support-annotations-25.3.0.jar"
 }
 
+java_prebuilt("android_support_multidex_java") {
+  jar_path = "$android_sdk_root/extras/android/m2repository/com/android/support/multidex/1.0.1/multidex-1.0.1.aar"
+}
+
+android_java_prebuilt("android_support_v13_java") {
+  jar_path =
+      "$android_sdk_root/extras/android/m2repository/com/android/support/support-v13/25.3.1/support-v13-25.3.1.aar"
+}
+
 # java_prebuilt("android_support_multidex_java") {
 #   jar_path = "$android_sdk_root/extras/android/support/multidex/library/libs/android-support-multidex.jar"
 # }
