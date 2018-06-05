@@ -75,7 +75,7 @@ def main():
     data['subjar_tuples'] = []
     data['has_classes_jar'] = False
     data['has_proguard_flags'] = False
-    data['has_native_libraries'] = False
+    # data['has_native_libraries'] = False
     with zipfile.ZipFile(aar_file) as z:
       data['is_manifest_empty'] = (
           _IsManifestEmpty(z.read('AndroidManifest.xml')))
@@ -94,8 +94,8 @@ def main():
           data['subjar_tuples'].append([label, name])
         elif name.startswith('assets/'):
           data['assets'].append(name)
-        elif name.startswith('jni/'):
-          data['has_native_libraries'] = True
+        # elif name.startswith('jni/'):
+        #   data['has_native_libraries'] = True
         elif name == 'classes.jar':
           data['has_classes_jar'] = True
         elif name == 'proguard.txt':
