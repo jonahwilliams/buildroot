@@ -40,7 +40,6 @@ android_aar_prebuilt("android_support_design_java") {
 }
 
 android_aar_prebuilt("android_support_multidex_java") {
-  # TODO(jbudorick): remove requires_android after crbug.com/522043 is fixed.
   requires_android = false
   aar_path = "$lib_path/multidex/1.0.1/multidex-1.0.1.aar"
 }
@@ -99,13 +98,7 @@ android_aar_prebuilt("android_support_v7_recyclerview_java") {
   aar_path = "$lib_path/$_lib_name/$lib_version/$_lib_name-$lib_version.aar"
 }
 
-# TODO(dgn): Remove this once no other target has a dependency on it
-java_group("google_play_services_default_resources") {
-  deps = []
-}
 
-# TODO(dgn): Remove this once other targets register dependencies on only the
-# modules they need.
 java_group("google_play_services_default_java") {
   deps = [
     ":google_play_services_auth_base_java",
@@ -128,13 +121,7 @@ android_aar_prebuilt("android_support_v17_leanback_java") {
   aar_path = "$lib_path/$_lib_name/$lib_version/$_lib_name-$lib_version.aar"
 }
 
-# TODO(jbudorick): Remove this once net_java_test_support no longer needs it.
-android_java_prebuilt("legacy_http_javalib") {
-  testonly = true
-  jar_path = "$android_sdk/optional/org.apache.http.legacy.jar"
-}
 
-# TODO(dgn): Use the POM files instead of hardcoding the dependencies.
 gms_path = "$default_extras_android_sdk_root/extras/google/m2repository/com/google/android/gms"
 gms_version = "9.8.0"
 
